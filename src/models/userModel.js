@@ -3,32 +3,33 @@ const {default :mongoose}=require('mongoose')
 const userSchema=new mongoose.Schema({
     title: {
         type:String,
-        require:true,
+        required:true,
         enum:['Mr', 'Mrs', 'Miss']
     },
   name: {
       type:String,
-      require:true
+      required:true
   },
   //{string, mandatory},
   phone: {
       unique:true,
       type:String,
-      require:true,
+      required:true,
       trim:true
   },
   email: {
       type:String,
-      require:true,
+      required:true,
       unique:true,
-      match: [/^\w+([\.-]?\w+)@\w+([\. -]?\w+)(\.\w{2,3})+$/, 'Please fill a valid email address'],
+    //   match: [/^\w+([\.-]?\w+)@\w+([\. -]?\w+)(\.\w{2,3})+$/, 'Please fill a valid email address'],
+      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address' ],
       trim:true,
       lowercase:true
 
   },
   password: {
       type:String,
-      require:true,
+      required:true,
       minLength:[8,'min length should be 8'],
       maxLength:[15,'max length should be 15']
 
@@ -38,7 +39,8 @@ const userSchema=new mongoose.Schema({
     street: {type:String,trim:true},
     city: {type:String,trim:true},
     pincode: {type:String,trim:true,minLength:[6,'min length should be 6'],maxLength:[6,'max length should be 6']}
+    // pincode:{type:String,trim :true}
   },
 },{timestamps:true})
 
-module.exports=mongoose.model('user',userSchema)
+module.exports=mongoose.model('user',userSchema)  
