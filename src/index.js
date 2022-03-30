@@ -15,7 +15,7 @@ mongoose.connect("mongodb+srv://group25:group25@cluster0.syx2i.mongodb.net/test"
 .catch ( err => console.log(err) )
     
 
-app.use('/', route)       
+app.use('/', route)         
 
 
 app.listen(process.env.PORT || 3000, function () {
