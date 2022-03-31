@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect("mongodb+srv://group25:group25@cluster0.syx2i.mongodb.net/test", {useNewUrlParser : true})
 .then( () => console.log('mongoDB is connected'))
-.catch( err => console.log(err))
+.catch( err => console.log(err))   
 
 
 app.use('/', route);

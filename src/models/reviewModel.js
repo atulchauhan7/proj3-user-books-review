@@ -41,4 +41,4 @@ const createReview = new mongoose.Schema({
 }, {timestamps : true} )
 
 
-module.exports= mongoose.model('review', createReview)
+module.exports= mongoose.model('reviews', createReview)
