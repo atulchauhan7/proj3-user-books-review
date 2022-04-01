@@ -94,7 +94,7 @@ const createUser = async function (req, res) {
             }
 
 
-            //address validation
+            //address validation 
 
             if (street) {
                 if (!isValid(street)) {
@@ -188,4 +188,4 @@ const userLogin = async function (req, res) {
 };
 
 module.exports.createUser = createUser
-module.exports.userLogin = userLogin
+module.exports.userLogin = userLogin           

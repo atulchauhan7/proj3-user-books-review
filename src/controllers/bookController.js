@@ -138,7 +138,7 @@ const getBooks = async function (req, res) {
 
         }
 
-        const bookList = await bookModel.find(filter).select({ _id: 1, title: 1, excerpt: 1, category: 1, reviews: 1, releasedAt: 1 }).sort({ title: 1 })
+        const bookList = await bookModel.find(filter).select({ _id: 1, title: 1, excerpt: 1, category: 1, reviews: 1, releasedAt: 1 }).sort({ title: 1,trim:true })
 
         if (bookList.length == 0) {
             return res.status(400).send({ status: false, msg: "nothing is found, pls change your filter value" })
