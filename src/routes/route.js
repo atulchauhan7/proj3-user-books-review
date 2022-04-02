@@ -11,7 +11,7 @@ router.post('/register',userController.createUser);
 
 router.post('/login',userController.login);
 //books
-router.post('/createBooks',middleware.validateUser,bookController.createBook); 
+router.post('/createBooks',middleware.authentication,bookController.createBook); 
 
 router.get('/getBooks',bookController.getBooks)
 
